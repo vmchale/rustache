@@ -1,15 +1,15 @@
 [package]
 
-name = "rustache"
+name = "rustache-lists"
 version = "0.1.0"
-authors = ["Jarrod Ruhland <jarrod.ruhland@gmail.com>",
+authors = ["Vanessa McHale <tmchale@wisc.edu>",
+           "Jarrod Ruhland <jarrod.ruhland@gmail.com>",
            "Stephen Paul Weber <github@singpolyma.net>"]
 
-description = "Mustache templating engine for rust"
+description = "Mustache templating engine for rust with a bugfix for lists"
 license = "MIT"
-documentation = "https://docs.rs/rustache/"
-repository = "https://github.com/rustache/rustache.git"
-homepage = "https://rustache.github.io"
+documentation = "https://docs.rs/rustache-lists/"
+repository = "https://github.com/vmchale/rustache.git"
 readme = "README.md"
 keywords = ["template", "mustache"]
 
