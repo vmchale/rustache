@@ -347,7 +347,9 @@ impl Template {
                                 rv = self.handle_node(node, h, writer);
                             }
                             Data::String(ref val) => {
-                                rv = self.handle_node(node, HashMap::new().insert(".",val.to_string()), writer);
+                                let mut h = HashMap::new();
+                                h.insert(".".to_string(), Data::from(val.to_string()));
+                                rv = self.handle_node(node, &h, writer);
                             }
                             Bool(ref val) => {
                                 return Err(ErrorKind::UnexpectedDataType(format!("{}", val)).into())
