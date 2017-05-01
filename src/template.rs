@@ -346,19 +346,26 @@ impl Template {
                             Hash(ref h) => {
                                 rv = self.handle_node(node, h, writer);
                             }
+                            // WARNING: this doesn't actually work correctly
                             Data::String(ref val) => {
                                 let mut h = HashMap::new();
                                 h.insert("".to_string(), Data::from(val.to_string()));
                                 rv = self.handle_node(node, &h, writer);
                             }
                             Bool(ref val) => {
-                                return Err(ErrorKind::UnexpectedDataType(format!("{}", val)).into())
+                                let mut h = HashMap::new();
+                                h.insert("".to_string(), Data::from(val.to_string()));
+                                rv = self.handle_node(node, &h, writer);
                             }
                             Integer(ref val) => {
-                                return Err(ErrorKind::UnexpectedDataType(format!("{}", val)).into())
+                                let mut h = HashMap::new();
+                                h.insert("".to_string(), Data::from(val.to_string()));
+                                rv = self.handle_node(node, &h, writer);
                             }
                             Float(ref val) => {
-                                return Err(ErrorKind::UnexpectedDataType(format!("{}", val)).into())
+                                let mut h = HashMap::new();
+                                h.insert("".to_string(), Data::from(val.to_string()));
+                                rv = self.handle_node(node, &h, writer);
                             }
                             Vector(ref val) => {
                                 return Err(ErrorKind::UnexpectedDataType(format!("{:?}", val)).into())
