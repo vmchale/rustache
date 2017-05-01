@@ -348,7 +348,7 @@ impl Template {
                             }
                             Data::String(ref val) => {
                                 let mut h = HashMap::new();
-                                h.insert(".".to_string(), Data::from(val.to_string()));
+                                h.insert("".to_string(), Data::from(val.to_string()));
                                 rv = self.handle_node(node, &h, writer);
                             }
                             Bool(ref val) => {
