@@ -534,11 +534,12 @@ impl Template {
             // sections come in two kinds, normal and inverted
             //
             // inverted are if the tag data is not there, the Static between it
-            // and it's closing tag gets written out, otherwise the text is thrown out
+            // and its closing tag gets written out, otherwise the text is thrown out
             //
             // normal section tags enclose a bit of html that will get repeated
             // for each element found in it's data
             Section(key, ref children, ref inverted, _, _) => {
+                println!("{}",key);
                 let tmp = key.to_string();
                 let truthy = if datastore.contains_key(&tmp) {
                     self.is_section_data_true(&datastore[&tmp])
