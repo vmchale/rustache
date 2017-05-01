@@ -552,7 +552,6 @@ impl Template {
                 } else {
                     false
                 };
-                println!("{}:{}",key, truthy);
                 match (truthy, *inverted) {
                     (true, true) | (false, false) => {}
                     (true, false) => {
