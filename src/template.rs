@@ -347,7 +347,7 @@ impl Template {
                                 rv = self.handle_node(node, h, writer);
                             }
                             Data::String(ref val) => {
-                                rv = self.handle_unescaped_or_value_node(node, &Data::from(String::new()), val.to_string(), &HashMap::new(), writer);
+                                rv = self.handle_unescaped_or_value_node(node, &Data::from(val.to_string()), "".to_string(), &HashMap::new(), writer);
                             }
                             Bool(ref val) => {
                                 return Err(ErrorKind::UnexpectedDataType(format!("{}", val)).into())
