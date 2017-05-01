@@ -98,7 +98,8 @@ impl<'a> From<HashBuilder<'a>> for Data<'a> {
 
 /// `VecBuilder` is a helper type that constructs `Data` types in a Vector
 pub struct VecBuilder<'a> {
-    data: Vec<Data<'a>>,
+    /// The data contained within
+    pub data: Vec<Data<'a>>,
 }
 
 impl<'a> VecBuilder<'a> {
