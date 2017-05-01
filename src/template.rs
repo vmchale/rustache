@@ -539,13 +539,13 @@ impl Template {
             // normal section tags enclose a bit of html that will get repeated
             // for each element found in it's data
             Section(key, ref children, ref inverted, _, _) => {
-                println!("{}",key);
                 let tmp = key.to_string();
                 let truthy = if datastore.contains_key(&tmp) {
                     self.is_section_data_true(&datastore[&tmp])
                 } else {
                     false
                 };
+                println!("{}:{}",key, truthy);
                 match (truthy, *inverted) {
                     (true, true) | (false, false) => {}
                     (true, false) => {
